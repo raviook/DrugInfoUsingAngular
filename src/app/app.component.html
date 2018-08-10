@@ -1,0 +1,64 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<section id="welcome" class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Welcome to {{title}}</h1>
+      <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+      
+    </div>
+  </section>
+  
+<div class="container">
+  <div class="container mt-3">
+    <h2>Select From Dropdown:-</h2>
+    <br>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#metabolism">Metabolism</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#psych">Psych Drug</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#info">Info</a>
+      </li>
+    </ul>
+  <div class="col-md-8 col-md-offset-2">
+
+  
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div id="metabolism" class="container tab-pane active"><br>
+        <h3>Metabolism</h3>
+        <div class="col-md-6 form-group">
+        <select name="metClass" class="form-control"  [(ngModel)]="selected" (click)="onSelectClass(selected)">
+            <option value="" disabled>Choose a Class</option>
+            <option *ngFor="let metClass of metdrugClass" [ngValue]="metClass">
+              {{metClass}}
+            </option>
+          </select>  
+          </div>
+    <br>
+    <div class="col-md-6 form-group">
+    <select name="state" class="form-control"  [(ngModel)]="selectedDrug" (click)="onSelectDrug(selectedDrug)">
+        <option value="" disabled>Choose a Drug</option>
+        <option *ngFor="let state of metDrugComposition" [ngValue]="state">
+          {{state.name}}
+        </option>
+      </select>
+    </div>
+      <p>{{combinationName}}</p>
+      </div>
+      <div id="psych" class="container tab-pane fade"><br>
+        <h3>Psych Drug</h3>
+
+      </div>
+      <div id="info" class="container tab-pane fade"><br>
+        <h3>Info</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
